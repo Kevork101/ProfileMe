@@ -24,6 +24,7 @@
 		82965DDB281FC938004D65F5 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82965DDA281FC938004D65F5 /* APIKeys.swift */; };
 		82965DDD282027D6004D65F5 /* CompanyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82965DDC282027D6004D65F5 /* CompanyDetail.swift */; };
 		82965DDF28202B3E004D65F5 /* CompanyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82965DDE28202B3E004D65F5 /* CompanyDetails.swift */; };
+		82965DE128204614004D65F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82965DE028204614004D65F5 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		82965DDA281FC938004D65F5 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		82965DDC282027D6004D65F5 /* CompanyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetail.swift; sourceTree = "<group>"; };
 		82965DDE28202B3E004D65F5 /* CompanyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetails.swift; sourceTree = "<group>"; };
+		82965DE028204614004D65F5 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D341B1308D734D0EA0B59E63 /* Pods-ProfileMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProfileMe.release.xcconfig"; path = "Target Support Files/Pods-ProfileMe/Pods-ProfileMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				82965DCE281FAAEC004D65F5 /* CompanyListViewController.swift */,
 				82965DD0281FB00B004D65F5 /* CompanyTableViewCell.swift */,
 				82965DD2281FB28B004D65F5 /* CompanyDetailViewController.swift */,
+				82965DE028204614004D65F5 /* AboutViewController.swift */,
 				82965DD6281FBCF6004D65F5 /* UIViewController+alert.swift */,
 				82965DDA281FC938004D65F5 /* APIKeys.swift */,
 				827DADA2281F9E3000716E8A /* Main.storyboard */,
@@ -266,6 +269,7 @@
 				82965DD1281FB00B004D65F5 /* CompanyTableViewCell.swift in Sources */,
 				827DAD9F281F9E3000716E8A /* SceneDelegate.swift in Sources */,
 				82965DDD282027D6004D65F5 /* CompanyDetail.swift in Sources */,
+				82965DE128204614004D65F5 /* AboutViewController.swift in Sources */,
 				82965DD7281FBCF6004D65F5 /* UIViewController+alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
