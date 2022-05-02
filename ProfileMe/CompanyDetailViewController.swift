@@ -13,9 +13,19 @@ class CompanyDetailViewController: UIViewController {
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var statusTextField: UITextField!
-    @IBOutlet weak var companyImageView: UIImageView!
+    
+    @IBOutlet weak var descriptionTextField: UITextView!
+    @IBOutlet weak var EBITDATextField: UITextField!
+    @IBOutlet weak var EVRevTextField: UITextField!
+    @IBOutlet weak var EVEbitdaTextField: UITextField!
+    @IBOutlet weak var EVTextField: UITextField!
+    
+    @IBOutlet weak var tickerTextField: UITextField!
+    
+    //@IBOutlet weak var companyImageView: UIImageView!
     
     var company: Company!
+    var companyDetails = CompanyDetails()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +40,30 @@ class CompanyDetailViewController: UIViewController {
         companyTextField.text = company.name
         addressTextField.text = company.address
         statusTextField.text = company.status
-        getCompanyFinancialData(function: "INCOME_STATEMENT", ticker: "AMZN", key: APIKeys.alphaVantageKey)
-        
+        descriptionTextField.text = company.description
+        EBITDATextField.text = "\(company.EBITDA)x"
+        EVRevTextField.text = "\(company.EVToRevenue)x"
+        EVEbitdaTextField.text = "\(company.EVToEBITDA)x"
+        EVTextField.text = "\(Double(company.EVToEBITDA) * Double(company.EBITDA))"
+    }
+    
+    func updateNewUserInterface() {
+        companyTextField.text = companyDetails.Name
+        addressTextField.text = companyDetails.Address
+        descriptionTextField.text = companyDetails.Description
+        EBITDATextField.text = companyDetails.EBITDA
+        EVRevTextField.text = companyDetails.EVToRevenue
+        EVEbitdaTextField.text = companyDetails.EVToEBITDA
     }
     
     func updateFromInterface() {
         company.name = companyTextField.text!
         company.address = addressTextField.text!
         company.status = statusTextField.text!
+        company.description = descriptionTextField.text!
+        company.EBITDA = Int(EBITDATextField.text!) ?? 0
+        company.EVToRevenue = Double(EVRevTextField.text!) ?? 0.0
+        company.EVToEBITDA = Double(EVEbitdaTextField.text!) ?? 0.0
         //companyImageView.image = UIImage(named: company.icon)
     }
     
@@ -63,6 +89,16 @@ class CompanyDetailViewController: UIViewController {
         
         // Display the autocomplete view controller.
         present(autocompleteController, animated: true, completion: nil)
+    }
+    
+    @IBAction func populateButtonPressed(_ sender: Any) {
+        companyDetails.ticker = tickerTextField.text! 
+        companyDetails.getData {
+            DispatchQueue.main.async {
+                self.updateNewUserInterface()
+            }
+        }
+        updateUserInterface()
     }
     
     func leaveViewController() {

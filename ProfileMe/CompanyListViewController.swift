@@ -18,6 +18,7 @@ class CompanyListViewController: UIViewController {
         companies = Companies()
         tableView.delegate = self
         tableView.dataSource = self
+        //getCompanyFinancialDatas(function: "INCOME_STATEMENT", ticker: "AMZN", key: APIKeys.alphaVantageKey)
     }
     
     override func viewDidAppear(_ animated: Bool) {

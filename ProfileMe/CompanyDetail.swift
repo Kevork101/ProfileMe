@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/*
 struct Returned: Codable {
     var symbol: String
     var annualReports: [AnnualReport]
@@ -31,9 +31,10 @@ func getCompanyFinancialData(function: String = "INCOME_STATEMENT", ticker: Stri
         do {
             //JSON DECODER
             let returned = try JSONDecoder().decode(Returned.self, from: data)
-            //print(returned.annualReports.first?.ebitda)
+            print(returned.annualReports.first?.ebitda)
         } catch {
             // ERROR
         }
     }.resume()
 }
+*/

@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qhd-Ze-CgB">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="100" id="sce-oB-xq0" customClass="CompanyTableViewCell" customModule="ProfileMe" customModuleProvider="target">
@@ -170,26 +170,27 @@
                             <constraint firstItem="qhd-Ze-CgB" firstAttribute="leading" secondItem="4Fr-8K-66N" secondAttribute="leading" id="fwE-xh-5fT"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="About" id="edy-TV-p5W">
-                            <connections>
-                                <segue destination="1Tn-fx-uci" kind="presentation" id="fCv-Bl-xYc"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="HbL-WN-g5t">
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="seh-kg-b7b">
                             <connections>
                                 <segue destination="czj-UR-4AT" kind="unwind" identifier="SignOutUnwind" animates="NO" unwindAction="unwindSignOutPressedWithSegue:" id="plR-5s-ihi"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vp8-rx-OIj">
-                            <connections>
-                                <segue destination="dMT-ZW-hhM" kind="presentation" identifier="AddDetail" modalPresentationStyle="fullScreen" id="TNr-c1-Gyd"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="vp8-rx-OIj">
+                                <connections>
+                                    <segue destination="dMT-ZW-hhM" kind="presentation" identifier="AddDetail" modalPresentationStyle="fullScreen" id="TNr-c1-Gyd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="About" id="edy-TV-p5W">
+                                <connections>
+                                    <segue destination="1Tn-fx-uci" kind="presentation" id="fCv-Bl-xYc"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="qhd-Ze-CgB" id="VJT-41-F6m"/>
                     </connections>
@@ -208,7 +209,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQh-gJ-5lX">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Company Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmG-Lk-PaR">
                                         <rect key="frame" x="16" y="5" width="251" height="45.5"/>
@@ -223,7 +224,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ticker" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BrW-UB-x6c">
-                                        <rect key="frame" x="20" y="476" width="75" height="34"/>
+                                        <rect key="frame" x="20" y="525" width="75" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -255,7 +256,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cya-UP-g2e">
-                                        <rect key="frame" x="179" y="490" width="196" height="84"/>
+                                        <rect key="frame" x="179" y="539" width="196" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -267,7 +268,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qS-hf-Y34">
-                                        <rect key="frame" x="0.0" y="490" width="171" height="84"/>
+                                        <rect key="frame" x="0.0" y="539" width="171" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -275,7 +276,7 @@
                                             <fontDescription key="titleFontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="searchButtonPressed:" destination="IQp-A7-952" eventType="touchUpInside" id="sGD-EP-kd3"/>
+                                            <action selector="populateButtonPressed:" destination="IQp-A7-952" eventType="touchUpInside" id="Nat-D6-9VG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LTM Financials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-tM-yt0">
@@ -286,7 +287,7 @@
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="Kce-ut-FMy">
-                                        <rect key="frame" x="217" y="290" width="129" height="158"/>
+                                        <rect key="frame" x="217" y="290" width="129" height="207"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Company Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eGs-HA-oo8">
@@ -344,9 +345,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="EBITDATextField" destination="o1c-7N-2FW" id="Gqi-bb-mbp"/>
+                        <outlet property="EVEbitdaTextField" destination="MJk-6O-FwX" id="yYP-Di-PoH"/>
+                        <outlet property="EVRevTextField" destination="Hhd-l5-Tyo" id="Oyl-fs-LKG"/>
+                        <outlet property="EVTextField" destination="5f7-Ge-tLz" id="WcD-hp-vqu"/>
                         <outlet property="addressTextField" destination="qLo-J5-EVT" id="2K7-Sc-4Pt"/>
                         <outlet property="companyTextField" destination="bmG-Lk-PaR" id="EVy-Ij-BZv"/>
+                        <outlet property="descriptionTextField" destination="eGs-HA-oo8" id="BAn-iA-Sxb"/>
                         <outlet property="statusTextField" destination="Wmk-Us-nL8" id="j30-6Z-K46"/>
+                        <outlet property="tickerTextField" destination="BrW-UB-x6c" id="71V-Mb-FJQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Nw-6V-42T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
