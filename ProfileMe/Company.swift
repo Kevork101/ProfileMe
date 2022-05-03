@@ -14,7 +14,7 @@ class Company {
     var address: String
     var status: String
     var description: String
-    var EBITDA: Int
+    var EBITDA: Double
     var EVToRevenue: Double
     var EVToEBITDA: Double
     //var iconImageURL: URL
@@ -26,7 +26,7 @@ class Company {
         //return ["name": name, "website": website, "address": address, "iconImageURL": iconImageURL, "postinguserID": postingUserID]
     }
     
-        init(name: String, website: String, address: String, description: String, EBITDA: Int, EVToRevenue: Double, EVToEBITDA: Double, status: String, postingUserID: String, documentID: String) {
+        init(name: String, website: String, address: String, description: String, EBITDA: Double, EVToRevenue: Double, EVToEBITDA: Double, status: String, postingUserID: String, documentID: String) {
         self.name = name
         self.website = website
         self.address = address
@@ -42,7 +42,7 @@ class Company {
     }
     
     convenience init() {
-        self.init(name: "", website: "", address: "", description: "", EBITDA: 0, EVToRevenue: 0, EVToEBITDA: 0.0, status: "", postingUserID: "", documentID: "")
+        self.init(name: "Company Name", website: "", address: "Corporate Address", description: "Company Description", EBITDA: 0.0, EVToRevenue: 0.0, EVToEBITDA: 0.0, status: "Status/Notes", postingUserID: "", documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -51,7 +51,7 @@ class Company {
         let address = dictionary["address"] as! String? ?? ""
         //let iconImageURL = dictionary["iconImageURL"] as! URL? ?? ""
         let description = dictionary["description"] as! String? ?? ""
-        let EBITDA = dictionary["EBITDA"] as! Int? ?? 0
+        let EBITDA = dictionary["EBITDA"] as! Double? ?? 0.0
             let EVToRevenue = dictionary["EVToRevenue"] as! Double? ?? 0.0
             let EVToEBITDA = dictionary["EVToEBITDA"] as! Double? ?? 0.0
         let status = dictionary["status"] as! String? ?? ""

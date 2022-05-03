@@ -14,7 +14,7 @@ class CompanyDetailViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var statusTextField: UITextField!
     
-    @IBOutlet weak var descriptionTextField: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var EBITDATextField: UITextField!
     @IBOutlet weak var EVRevTextField: UITextField!
     @IBOutlet weak var EVEbitdaTextField: UITextField!
@@ -40,28 +40,38 @@ class CompanyDetailViewController: UIViewController {
         companyTextField.text = company.name
         addressTextField.text = company.address
         statusTextField.text = company.status
-        descriptionTextField.text = company.description
-        EBITDATextField.text = "\(company.EBITDA)x"
+        descriptionTextView.text = String(company.description)
+        //EBITDATextField.text = "\(company.EBITDA)x"
+        EBITDATextField.text = "$\(company.EBITDA)" //String(format: "$%.2f", company.EBITDA)
         EVRevTextField.text = "\(company.EVToRevenue)x"
         EVEbitdaTextField.text = "\(company.EVToEBITDA)x"
-        EVTextField.text = "\(Double(company.EVToEBITDA) * Double(company.EBITDA))"
+        EVTextField.text = "$\(Double(company.EVToEBITDA) * Double(company.EBITDA))"
     }
     
-    func updateNewUserInterface() {
-        companyTextField.text = companyDetails.Name
-        addressTextField.text = companyDetails.Address
-        descriptionTextField.text = companyDetails.Description
-        EBITDATextField.text = companyDetails.EBITDA
-        EVRevTextField.text = companyDetails.EVToRevenue
-        EVEbitdaTextField.text = companyDetails.EVToEBITDA
+    func updateTerms() {
+        
+        company.name = companyDetails.Name
+        company.address = companyDetails.Address
+        company.description = companyDetails.Description
+        //print(companyDetails.Description)
+        company.EBITDA = Double(companyDetails.EBITDA) ?? 0.0
+        company.EVToRevenue = Double(companyDetails.EVToRevenue) ?? 0.0
+        company.EVToEBITDA = Double(companyDetails.EVToEBITDA) ?? 0.0
+        
+//        companyTextField.text = companyDetails.Name
+//        addressTextField.text = companyDetails.Address
+//        descriptionTextField.text = companyDetails.Description
+//        EBITDATextField.text = companyDetails.EBITDA
+//        EVRevTextField.text = companyDetails.EVToRevenue
+//        EVEbitdaTextField.text = companyDetails.EVToEBITDA
     }
     
     func updateFromInterface() {
         company.name = companyTextField.text!
         company.address = addressTextField.text!
         company.status = statusTextField.text!
-        company.description = descriptionTextField.text!
-        company.EBITDA = Int(EBITDATextField.text!) ?? 0
+        company.description = descriptionTextView.text!
+        company.EBITDA = Double(EBITDATextField.text!) ?? 0.0
         company.EVToRevenue = Double(EVRevTextField.text!) ?? 0.0
         company.EVToEBITDA = Double(EVEbitdaTextField.text!) ?? 0.0
         //companyImageView.image = UIImage(named: company.icon)
@@ -95,7 +105,8 @@ class CompanyDetailViewController: UIViewController {
         companyDetails.ticker = tickerTextField.text! 
         companyDetails.getData {
             DispatchQueue.main.async {
-                self.updateNewUserInterface()
+                self.updateTerms()
+                self.updateUserInterface()
             }
         }
         updateUserInterface()
